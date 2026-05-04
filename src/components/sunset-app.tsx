@@ -11,7 +11,7 @@ import { reverseGeocode } from "@/lib/open-meteo";
 import { buildWeekReport } from "@/lib/report";
 import type { Place, WeekReport } from "@/lib/types";
 
-const STORAGE_KEY = "golden:lastPlace";
+const STORAGE_KEY = "Skyerise:lastPlace";
 
 export function SunsetApp() {
   const [place, setPlace] = useState<Place | null>(null);
@@ -92,9 +92,7 @@ export function SunsetApp() {
       (err) => {
         setLocating(false);
         if (err.code === err.PERMISSION_DENIED) {
-          setError(
-            "Location permission denied — search for a city instead.",
-          );
+          setError("Location permission denied — search for a city instead.");
         } else {
           setError("Couldn't get your location. Search for a city instead.");
         }
@@ -126,7 +124,7 @@ export function SunsetApp() {
       <header className="flex flex-col gap-3">
         <div className="flex items-baseline justify-between gap-3">
           <h1 className="bg-gradient-to-br from-yellow-300 via-primary to-accent bg-clip-text text-3xl font-semibold tracking-tight text-transparent sm:text-4xl">
-            Golden
+            Skyerise
           </h1>
           <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
             {headerLabel}
@@ -187,14 +185,20 @@ export function SunsetApp() {
           {loading || !activeDay ? (
             <LoadingPanel />
           ) : (
-            <EventPanel event={activeDay.sunrise} timezone={activeDay.timezone} />
+            <EventPanel
+              event={activeDay.sunrise}
+              timezone={activeDay.timezone}
+            />
           )}
         </TabsContent>
         <TabsContent value="sunset">
           {loading || !activeDay ? (
             <LoadingPanel />
           ) : (
-            <EventPanel event={activeDay.sunset} timezone={activeDay.timezone} />
+            <EventPanel
+              event={activeDay.sunset}
+              timezone={activeDay.timezone}
+            />
           )}
         </TabsContent>
       </Tabs>

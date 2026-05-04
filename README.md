@@ -1,4 +1,4 @@
-cat ~/.ssh/id_ed25519_aidan2.pub# Golden — sunrise & sunset quality
+# Skyrise
 
 A mobile-first Next.js web app that predicts how good today's sunrise and
 sunset will be at your location, with a transparent 0–100 score and the

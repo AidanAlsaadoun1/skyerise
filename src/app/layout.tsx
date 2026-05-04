@@ -2,13 +2,13 @@ import "./globals.css";
 import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
-  title: "Golden — sunrise & sunset quality",
+  title: "Skyerise — sunrise & sunset quality",
   description:
     "Tells you how good today's sunrise and sunset are going to be, with a transparent score and the reasons behind it.",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Golden",
+    title: "Skyerise",
   },
   formatDetection: { telephone: false },
 };
